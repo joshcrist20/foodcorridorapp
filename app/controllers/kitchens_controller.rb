@@ -1,4 +1,5 @@
 class KitchensController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_kitchen, only: [:show, :edit, :update, :destroy]
 
   # GET /kitchens
@@ -24,7 +25,7 @@ class KitchensController < ApplicationController
   # POST /kitchens
   # POST /kitchens.json
   def create
-    @kitchen = Kitchen.new(kitchen_params)
+    @kitchen = current_user.kitchens.new(kitchen_params)
 
     respond_to do |format|
       if @kitchen.save

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151225183126) do
+ActiveRecord::Schema.define(version: 20151225194303) do
 
   create_table "kitchens", force: :cascade do |t|
     t.string   "host"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20151225183126) do
     t.boolean  "availability", default: true
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
