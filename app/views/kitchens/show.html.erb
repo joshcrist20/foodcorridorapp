@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Host:</strong>
+  <%= @kitchen.host %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @kitchen.location %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @kitchen.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @kitchen.price %>
+</p>
+
+<p>
+  <strong>Availability:</strong>
+  <%= @kitchen.availability %>
+</p>
+
+<%= link_to 'Edit', edit_kitchen_path(@kitchen) %> |
+<%= link_to 'Back', kitchens_path %>
