@@ -20,6 +20,7 @@ class KitchensController < ApplicationController
 
   # GET /kitchens/1/edit
   def edit
+    authorize! :manage, @kitchen 
   end
 
   # POST /kitchens
@@ -41,6 +42,7 @@ class KitchensController < ApplicationController
   # PATCH/PUT /kitchens/1
   # PATCH/PUT /kitchens/1.json
   def update
+    authorize! :manage, @kitchen 
     respond_to do |format|
       if @kitchen.update(kitchen_params)
         format.html { redirect_to @kitchen, notice: 'Kitchen was successfully updated.' }
@@ -55,6 +57,7 @@ class KitchensController < ApplicationController
   # DELETE /kitchens/1
   # DELETE /kitchens/1.json
   def destroy
+    authorize! :manage, @kitchen 
     @kitchen.destroy
     respond_to do |format|
       format.html { redirect_to kitchens_url, notice: 'Kitchen was successfully destroyed.' }
