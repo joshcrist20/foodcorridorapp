@@ -4,7 +4,7 @@ class KitchensController < ApplicationController
   # GET /kitchens
   # GET /kitchens.json
   def index
-    @kitchens = Kitchen.all
+    @kitchens = Kitchen.where(availability: true)
   end
 
   # GET /kitchens/1

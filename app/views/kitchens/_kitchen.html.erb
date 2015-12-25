@@ -1,0 +1,11 @@
+<div class="col-md-3">
+<div class="tumbnail">
+<%= link_to kitchen_path(kitchen) do %>
+<%= image_tag "kitchen.jpg", class: "img-responsive" %>
+<% end %>
+<div class= "caption">
+  <h3><strong><%= link_to kitchen.host, kitchen_path(kitchen) %></strong></h3>
+  <p>$<%= kitchen.price.to_f / 100 %></p>
+</div>
+</div>
+</div>
