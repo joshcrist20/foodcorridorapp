@@ -7,6 +7,18 @@
 <h3><%= @kitchen.host %> at <%= @kitchen.location %></h3>
 <p><%= @kitchen.description %></p>
 <h4 class="text-center">$<%= @kitchen.price.to_f / 100 %></h4>
+
+<%= form_tag buy_path(slug: @kitchen.slug) do %>
+<script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-amount="<%= @kitchen.price %>"
+    data-name="TheFoodCorridor"
+    data-description="<%= @kitchen.host %>"
+    data-email="<%= current_user.email %>">
+  </script>
+<% end %>
+
 </div>
 </div>
 
