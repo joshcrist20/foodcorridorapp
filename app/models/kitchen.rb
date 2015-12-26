@@ -12,5 +12,5 @@ class Kitchen < ActiveRecord::Base
 	message: "Only pdfs allowed"
 
 	validates :image, attachment_presence: true
-	validates :resource, attachment_presence: true
+	validates :resource, attachment_presence: false
 end

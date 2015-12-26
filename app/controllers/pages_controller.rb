@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   	if current_user
   		redirect_to kitchens_path
 	end
+	@kitchens = Kitchen.last(4)
   end
 
 	def dashboard
