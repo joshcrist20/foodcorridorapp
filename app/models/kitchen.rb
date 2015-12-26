@@ -1,4 +1,7 @@
 class Kitchen < ActiveRecord::Base
+	extend FriendlyId
+	friendly_id :host, use: :slugged
+
 	belongs_to :user
 	has_attached_file :image
 	has_attached_file :resource
