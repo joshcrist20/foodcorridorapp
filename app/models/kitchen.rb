@@ -3,6 +3,7 @@ class Kitchen < ActiveRecord::Base
 	friendly_id :host, use: :slugged
 
 	belongs_to :user
+	has_many :sales
 	has_attached_file :image
 	has_attached_file :resource
 
@@ -16,4 +17,7 @@ class Kitchen < ActiveRecord::Base
 
 	validates :image, attachment_presence: true
 	validates :resource, attachment_presence: false
+
+	validates_numericality_of :price,
+	greater_than: 49, message: "must be at least 50 cents"
 end
