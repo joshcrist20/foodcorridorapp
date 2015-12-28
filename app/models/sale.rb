@@ -8,7 +8,7 @@ class Sale < ActiveRecord::Base
 	aasm column: 'state' do
 			state :pending, initial: true
 			state :processing
-			state :finishing
+			state :finished
 			state :errored
 
 			event :process, after: :charge_card do 
