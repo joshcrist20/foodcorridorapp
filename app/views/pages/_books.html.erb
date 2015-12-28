@@ -1,0 +1,20 @@
+<table class="table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Host</th>
+            <th>Available</th>  
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @kitchens.each do |kitchen| %> 
+          <tr>
+            <td><%= kitchen.id %></td>
+            <td><%= link_to kitchen.host, kitchen_path(kitchen) %></td>
+            <td><%= kitchen.availability %></td>
+            <td><%= link_to "Edit", edit_kitchen_path(kitchen) %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>

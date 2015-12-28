@@ -4,35 +4,18 @@
 	<h3 class="text-center">
 		Kitchens <%= link_to "New Kitchen", new_kitchen_path, class: "btn btn-primary btn-sm" %>
 	</h3>
-	<table class="table">
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Host</th>
-            <th>Available</th>  
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-        <% @kitchens.each do |kitchen| %> 
-          <tr>
-            <td><%= kitchen.id %></td>
-            <td><%= link_to kitchen.host, kitchen_path(kitchen) %></td>
-            <td><%= kitchen.availability %></td>
-            <td><%= link_to "Edit", edit_kitchen_path(kitchen) %></td>
-          </tr>
-        <% end %>
-        </tbody>
-      </table>
+	<%= render "books" %>
 </div>
 <div class="col-md-4">
 	<h3 class="text-center">
 		Purchased
 	</h3>
+<%= render "purchased" %>
 </div>
 <div class="col-md-4">
 	<h3 class="text-center">
 		Sales
 	</h3>
+	<%= render "sales" %>
 </div>
 </div>

@@ -1,0 +1,18 @@
+<table class="table">
+        <thead>
+          <tr>
+            <th>Host</th>
+            <th>Date</th>  
+            <th>Buyer</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @sales.each do |sale| %> 
+          <tr>
+            <td><%= link_to sale.kitchen.host, pickup_path(sale.guid) %></td>
+            <td><%= time_ago_in_words(sale.created_at) %> ago</td>
+            <td><%= sale.buyer_email %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
