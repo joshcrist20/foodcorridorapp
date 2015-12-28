@@ -1,12 +1,27 @@
-<div class="jumbotron">
+<div class="jumbotron text-center">
   <h1>Welcome to The Food Corridor</h1>
   <p>Post your kitchen space. Find your cooking place.</p>
-  <%= link_to "Kitchens", kitchens_path, class: "btn btn-primary btn-lg" %>
-  <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+  <div>
+  <div class="row search-row animated fadeInUp">
+							<div class="col-lg-4 col-sm-4 search-col relative locationicon">
+								<i class="icon-location-2 icon-append"></i>
+									<input type="text" name="country" id="autocomplete-ajax" class="form-control locinput input-rel searchtag-input has-icon" placeholder="City/Zipcode..." value="" autocomplete="off">
+							</div>
+						<div class="col-lg-4 col-sm-4 search-col relative"> <i class="icon-docs icon-append"></i>
+							<input type="text" name="ads" class="form-control has-icon" placeholder="I'm looking for a ..." value="">
+						</div>
+						<div class="col-lg-4 col-sm-4 search-col">
+							<button class="btn btn-primary btn-search btn-block"><i class="icon-search"></i><strong>Find</strong></button>
+						</div>
+					</div>
+				</div>	
 </div>
+
 
 <div class="row">
 
 <%= render @kitchens %>
 
 </div>
+
+
