@@ -8,6 +8,7 @@
 <p><%= @kitchen.description %></p>
 <h4 class="text-center">$<%= @kitchen.price.to_f / 100 %></h4>
 
+<% if current_user %>
 <%= form_tag buy_path(slug: @kitchen.slug) do %>
 <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -18,6 +19,8 @@
     data-email="<%= current_user.email %>">
   </script>
 <% end %>
+<% else %>
+<p>Please Login First to Buy</p>
 
 </div>
 </div>
